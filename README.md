@@ -2,6 +2,10 @@
 
 A personal portfolio website built with React, TypeScript, and Vite, featuring a Bleach anime-themed design with dual themes (Quincy and Soul Society).
 
+## 🌐 Live Demo
+
+**View the live portfolio:** [https://daler.github.io/bleach_portoflio](https://daler.github.io/bleach_portoflio)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -15,7 +19,7 @@ A personal portfolio website built with React, TypeScript, and Vite, featuring a
 
    ```bash
    git clone <repository-url>
-   cd bleach_portoflio/bleach-portfolio
+   cd bleach_portoflio/bleach-template
    ```
 
 2. **Install dependencies**
@@ -38,6 +42,39 @@ A personal portfolio website built with React, TypeScript, and Vite, featuring a
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build the project for production
 - `npm run preview` - Preview the production build locally
+- `npm run deploy` - Build and deploy to GitHub Pages
+
+## 🚀 GitHub Pages Deployment
+
+### Automatic Deployment (Recommended)
+
+The project is configured with GitHub Actions for automatic deployment:
+
+1. **Push to main branch** - Any push to `main` or `master` branch will automatically trigger deployment
+2. **GitHub Actions** - The workflow will build and deploy your site to GitHub Pages
+3. **Live site** - Your site will be available at `https://daler.github.io/bleach_portoflio`
+
+### Manual Deployment
+
+To deploy manually:
+
+```bash
+npm run deploy
+```
+
+### GitHub Pages Setup
+
+1. **Enable GitHub Pages** in your repository settings:
+
+   - Go to Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `gh-pages` (created automatically)
+   - Folder: `/ (root)`
+
+2. **Update homepage URL** in `package.json` if needed:
+   ```json
+   "homepage": "https://yourusername.github.io/your-repo-name"
+   ```
 
 ## 📦 Packages Used
 
@@ -50,6 +87,7 @@ A personal portfolio website built with React, TypeScript, and Vite, featuring a
 
 - **TypeScript** (~5.8.3) - Type-safe JavaScript development
 - **Vite** (^7.1.2) - Fast build tool and development server
+- **gh-pages** (^6.1.1) - GitHub Pages deployment tool
 
 ### TypeScript Configuration
 
@@ -61,29 +99,32 @@ A personal portfolio website built with React, TypeScript, and Vite, featuring a
 ## 🏗️ Project Structure
 
 ```
-bleach-portfolio/
-├── public/                 # Static assets
-│   └── vite.svg           # Vite logo
-├── src/                   # Source code
-│   ├── components/        # React components
-│   │   ├── App.tsx        # Main application component
-│   │   ├── About.tsx      # About section component
-│   │   ├── Skills.tsx     # Skills section component
-│   │   ├── Projects.tsx   # Projects section component
-│   │   ├── Hobbies.tsx    # Hobbies section component
-│   │   ├── Contact.tsx    # Contact section component
-│   │   └── ThemeToggle.tsx # Theme switching component
-│   ├── theme/             # Styling and themes
-│   │   └── styles.css     # CSS styles and theme definitions
-│   ├── types/             # TypeScript type definitions
-│   │   └── index.ts       # Interface definitions for data structures
-│   ├── index.tsx          # Application entry point
-│   ├── vite-env.d.ts      # Vite environment types
-│   └── typescript.svg     # TypeScript logo
-├── index.html             # HTML template
-├── package.json           # Project dependencies and scripts
-├── tsconfig.json          # TypeScript configuration
-└── node_modules/          # Installed dependencies
+bleach-template/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Actions deployment workflow
+├── public/                     # Static assets
+│   └── vite.svg               # Vite logo
+├── src/                       # Source code
+│   ├── components/            # React components
+│   │   ├── App.tsx            # Main application component
+│   │   ├── About.tsx          # About section component
+│   │   ├── Skills.tsx         # Skills section component
+│   │   ├── Projects.tsx       # Projects section component
+│   │   ├── Hobbies.tsx        # Hobbies section component
+│   │   ├── Contact.tsx        # Contact section component
+│   │   └── ThemeToggle.tsx    # Theme switching component
+│   ├── theme/                 # Styling and themes
+│   │   └── styles.css         # CSS styles and theme definitions
+│   ├── types/                 # TypeScript type definitions
+│   │   └── index.ts           # Interface definitions for data structures
+│   ├── index.tsx              # Application entry point
+│   ├── vite-env.d.ts          # Vite environment types
+│   └── typescript.svg         # TypeScript logo
+├── index.html                 # HTML template
+├── package.json               # Project dependencies and scripts
+├── tsconfig.json              # TypeScript configuration
+└── node_modules/              # Installed dependencies
 ```
 
 ## 🎨 Features
@@ -143,6 +184,7 @@ Defined interfaces for consistent data structures:
 - All components are written in TypeScript with strict type checking
 - CSS is used for styling with custom properties for theming
 - The application is a single-page application (SPA) with smooth navigation
+- GitHub Pages deployment is configured for automatic updates
 
 ## 🤝 Contributing
 
