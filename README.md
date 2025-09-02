@@ -4,7 +4,7 @@ A personal portfolio website built with React, TypeScript, and Vite, featuring a
 
 ## 🌐 Live Demo
 
-**View the live portfolio:** [https://daler.github.io/bleach_portoflio](https://daler.github.io/bleach_portoflio)
+**View the live portfolio:** [https://dalerkhamidov.github.io/bleach_portoflio](https://dalerkhamidov.github.io/bleach_portoflio)
 
 ## 🚀 Quick Start
 
@@ -52,7 +52,7 @@ The project is configured with GitHub Actions for automatic deployment:
 
 1. **Push to main branch** - Any push to `main` or `master` branch will automatically trigger deployment
 2. **GitHub Actions** - The workflow will build and deploy your site to GitHub Pages
-3. **Live site** - Your site will be available at `https://daler.github.io/bleach_portoflio`
+3. **Live site** - Your site will be available at `https://dalerkhamidov.github.io/bleach_portoflio`
 
 ### Manual Deployment
 
