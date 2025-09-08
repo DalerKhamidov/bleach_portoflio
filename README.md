@@ -19,7 +19,7 @@ A personal portfolio website built with React, TypeScript, and Vite, featuring a
 
    ```bash
    git clone <repository-url>
-   cd bleach_portoflio/bleach-template
+   cd bleach_portoflio/
    ```
 
 2. **Install dependencies**
@@ -99,32 +99,21 @@ npm run deploy
 ## 🏗️ Project Structure
 
 ```
-bleach-template/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions deployment workflow
-├── public/                     # Static assets
-│   └── vite.svg               # Vite logo
-├── src/                       # Source code
-│   ├── components/            # React components
-│   │   ├── App.tsx            # Main application component
-│   │   ├── About.tsx          # About section component
-│   │   ├── Skills.tsx         # Skills section component
-│   │   ├── Projects.tsx       # Projects section component
-│   │   ├── Hobbies.tsx        # Hobbies section component
-│   │   ├── Contact.tsx        # Contact section component
-│   │   └── ThemeToggle.tsx    # Theme switching component
-│   ├── theme/                 # Styling and themes
-│   │   └── styles.css         # CSS styles and theme definitions
-│   ├── types/                 # TypeScript type definitions
-│   │   └── index.ts           # Interface definitions for data structures
-│   ├── index.tsx              # Application entry point
-│   ├── vite-env.d.ts          # Vite environment types
-│   └── typescript.svg         # TypeScript logo
-├── index.html                 # HTML template
-├── package.json               # Project dependencies and scripts
-├── tsconfig.json              # TypeScript configuration
-└── node_modules/              # Installed dependencies
+bleach_portoflio/
+├── .git/                    # Git repository
+├── .github/workflows/       # GitHub Actions
+├── dist/                    # Built files (for deployment)
+├── node_modules/           # Dependencies
+├── public/                 # Static assets
+├── src/                    # Source code
+│   ├── components/         # React components
+│   ├── theme/             # Styling
+│   └── types/             # TypeScript types
+├── index.html             # Entry point
+├── package.json           # Project configuration
+├── tsconfig.json          # TypeScript config
+├── vite.config.ts         # Vite configuration
+└── README.md              # Documentation
 ```
 
 ## 🎨 Features

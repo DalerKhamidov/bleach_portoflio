@@ -19,19 +19,19 @@ jobs:
         with:
           node-version: "18"
           cache: "npm"
-          cache-dependency-path: "bleach-template/package-lock.json"
+          cache-dependency-path: "package-lock.json"
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./bleach-template
+        working-directory: ./
 
       - name: Build project
         run: npm run build
-        working-directory: ./bleach-template
+        working-directory: ./
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bleach-template/dist
+          publish_dir: ./dist
