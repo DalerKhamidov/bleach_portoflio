@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://dalerkhamidov.io",
+  "homepage": "https://dalerkhamidov.github.io/bleach_portoflio",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -18,8 +18,9 @@
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^5.0.2",
+    "gh-pages": "^6.1.1",
     "typescript": "~5.8.3",
-    "vite": "^7.1.2",
-    "gh-pages": "^6.1.1"
+    "vite": "^7.1.2"
   }
 }
