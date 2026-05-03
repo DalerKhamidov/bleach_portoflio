@@ -23,10 +23,10 @@ const App: React.FC = () => {
       
       <header className={`header-fixed header-${currentTheme}`}>
         <nav className="nav-container">
-          <div className={`logo-${currentTheme}`}>
-            {currentTheme === "quincy" ? "⭐ Quincy Portfolio" : "⚔️ Soul Society Portfolio"}
+          <div className={`logo-slot logo-${currentTheme}`}>
+            {currentTheme === "quincy" ? "⭐ Professional" : "⚔️ Personal"}
           </div>
-          <div className="nav-items">
+          <div className="nav-center">
             <ul className="nav-links">
               <li><button onClick={() => scrollToSection('about')} className={`nav-link ${currentTheme === 'ichigo' ? 'nav-link-ichigo' : ''}`}>About</button></li>
               <li><button onClick={() => scrollToSection('skills')} className={`nav-link ${currentTheme === 'ichigo' ? 'nav-link-ichigo' : ''}`}>Skills</button></li>
@@ -34,6 +34,8 @@ const App: React.FC = () => {
               <li><button onClick={() => scrollToSection('hobbies')} className={`nav-link ${currentTheme === 'ichigo' ? 'nav-link-ichigo' : ''}`}>Hobbies</button></li>
               <li><button onClick={() => scrollToSection('contact')} className={`nav-link ${currentTheme === 'ichigo' ? 'nav-link-ichigo' : ''}`}>Contact</button></li>
             </ul>
+          </div>
+          <div className="theme-toggle-slot">
             <ThemeToggle currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
           </div>
         </nav>

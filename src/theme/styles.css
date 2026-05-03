@@ -6,6 +6,8 @@
   --ichigo-red: #dc2626;
   --ichigo-orange: #ea580c;
   --ichigo-dark: #1c1917;
+  /* Tsukushi Old Mincho is commercial; Zen Old Mincho is the closest free web substitute */
+  --font-primary: "Zen Old Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
 /* Base Styles */
@@ -16,8 +18,15 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-primary);
   overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
 
 /* Quincy Theme */
@@ -90,13 +99,13 @@ body {
   }
 }
 
-/* Header Styles */
+/* Header Styles — conference-style bar (wide inset, brand | links | CTA) */
 .header-fixed {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 1rem 0;
+  padding: 1.125rem 0;
 }
 
 .header-quincy {
@@ -113,44 +122,71 @@ body {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
-  max-width: 1200px;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1.5rem, 5vw, 3.25rem);
+}
+
+.logo-slot {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(20rem, 28vw);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .logo-quincy {
-  font-size: 1.8rem;
+  font-size: clamp(1.25rem, 1.35vw + 1rem, 1.75rem);
   font-weight: bold;
   color: var(--quincy-blue);
   text-shadow: 0 0 10px var(--quincy-blue);
 }
 
 .logo-ichigo {
-  font-size: 1.8rem;
+  font-size: clamp(1.25rem, 1.35vw + 1rem, 1.75rem);
   font-weight: bold;
   color: var(--ichigo-red);
   text-shadow: 0 0 10px var(--ichigo-red);
 }
 
-.nav-items {
+.nav-center {
+  flex: 1 1 auto;
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 clamp(0.5rem, 2vw, 1.5rem);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.theme-toggle-slot {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 10.5rem;
 }
 
 .nav-link {
+  font-size: calc(1rem + 2px);
   color: white;
   background: none;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -183,6 +219,8 @@ body {
 }
 
 .theme-switch {
+  width: 100%;
+  max-width: 100%;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -190,6 +228,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .theme-switch-quincy {
@@ -208,14 +248,15 @@ body {
   box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
 }
 
-/* Main Content */
+/* Main Content — clear fixed header; anchors scroll below bar */
 .main-content {
-  padding-top: 80px;
+  padding-top: clamp(5.25rem, 4vw + 4rem, 6.25rem);
 }
 
 .section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
+  scroll-margin-top: clamp(5rem, 4vw + 3.75rem, 6rem);
+  min-height: 80vh;
+  padding: 3.2rem 1.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,7 +271,7 @@ body {
 .section-title {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.2rem;
   position: relative;
 }
 
@@ -317,6 +358,15 @@ body {
 .profile-bubble {
   width: 300px;
   height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  min-height: 300px;
+  aspect-ratio: 1;
+  align-self: start;
+  justify-self: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .skill-bubble,
@@ -351,6 +401,12 @@ body {
 
 .profile-bubble .bubble-icon {
   font-size: 6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .contact-bubble .bubble-icon {
@@ -663,14 +719,58 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .logo-slot {
+    max-width: min(18rem, 42vw);
+  }
+
   .nav-links {
+    gap: 0.65rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.55rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 1rem;
+    padding: 0 1.25rem;
+  }
+
+  .nav-center {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links {
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .theme-toggle-slot {
+    margin-left: 0;
+    min-width: 0;
+    width: auto;
+    justify-content: center;
+  }
+
+  .logo-slot {
+    max-width: none;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
   }
 
   .nav-link {
     padding: 0.3rem 0.6rem;
-    font-size: 0.9rem;
+    font-size: calc(0.9rem + 2px);
   }
 
   .section-title {
@@ -679,12 +779,18 @@ body {
 
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 2.56rem;
     text-align: center;
   }
 
   .profile-bubble {
     width: 200px;
     height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    justify-self: center;
   }
 
   .profile-bubble .bubble-icon {

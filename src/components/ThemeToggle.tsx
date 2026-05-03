@@ -16,7 +16,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ currentTheme, setCurrentTheme
       onClick={handleThemeSwitch}
       className={`theme-switch theme-switch-${currentTheme}`}
     >
-      {currentTheme === "quincy" ? "Ichigo Mode" : "Quincy Mode"}
+      {currentTheme === "quincy" ? "Casual" : "Career"}
     </button>
   );
 };

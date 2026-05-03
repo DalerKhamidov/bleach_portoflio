@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .history
+.claude/*
+.claude/CLAUDE.md
+Prompt_Log/*
