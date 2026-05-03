@@ -1,23 +1,17 @@
-export interface Skill {
-  icon: string;
+export interface SkillCategory {
   title: string;
-  description: string;
-  image?: string;
+  body: string;
 }
 
-export interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  liveDemo: string;
-  github: string;
-  image?: string;
-  video?: string;
+export interface WorkExperience {
+  company: string;
+  location: string;
+  role: string;
+  dates: string;
+  bullets: string[];
 }
 
-export interface Hobby {
+export interface HumanMoment {
   title: string;
   description: string;
-  icon: string;
-  image?: string;
 }

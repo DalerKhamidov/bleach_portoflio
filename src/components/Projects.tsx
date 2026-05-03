@@ -1,93 +1,111 @@
 import React from "react";
-import type { Project } from "../types";
+import type { SkillCategory, WorkExperience } from "../types";
 import "../theme/styles.css";
 
 interface ProjectsProps {
-  currentTheme: "quincy" | "ichigo";
+  currentTheme: "professional" | "personal";
 }
 
-const quincyProjects: Project[] = [
+const workIntro =
+  "To engineer durable data and platform systems—from finance and banking programs including Capital One credit card initiatives through Infinitive, to HPC and cloud work aligned with General Electric’s research ecosystem via Logic Tech—and to keep shipping reliable pipelines everywhere in between.";
+
+const experience: WorkExperience[] = [
   {
-    title: 'Reishi Management System',
-    description: 'A comprehensive data visualization platform that tracks and analyzes spiritual energy patterns with the precision of Quincy techniques.',
-    technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-    liveDemo: '#',
-    github: '#',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop'
+    company: "Infinitive",
+    location: "Ashburn, VA",
+    role: "Software Engineer",
+    dates: "June 2025 – Present",
+    bullets: [
+      "Spearheaded refactoring of an ETL pipeline processing millions of records using Apache Airflow DAGs, ensuring data integrity and zero-downtime service continuity throughout the transition.",
+      "Improved pipeline reliability via a microservices-based framework decoupling orchestration with DynamoDB and unit testing with pytest, reducing processing failures by 30%.",
+      "Optimized Databricks workflows via PySpark tuning and query optimization, achieving up to 80% performance improvement over the prior implementation.",
+    ],
   },
   {
-    title: 'Wandenreich Dashboard',
-    description: 'An elegant administrative interface built with modern web technologies, featuring real-time updates and intuitive controls.',
-    technologies: ['Vue.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    liveDemo: '#',
-    github: '#',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop'
+    company: "Logic Tech Inc.",
+    location: "Niskayuna, NY (General Electric ecosystem)",
+    role: "Backend Engineer",
+    dates: "January 2024 – June 2025",
+    bullets: [
+      "Configured and maintained HPC cluster applications for large-scale data processing; authored AWS Lambda functions and persisted output to S3, supporting hundreds of concurrent job submissions.",
+      "Automated Slurm job scheduler analysis via SQL scripts validating computational mesh configurations and surfacing performance benchmarks for clients.",
+      "Engineered Python scripts to optimize HPC script submissions and streamline billing workflows, reducing human errors by 30%.",
+    ],
   },
   {
-    title: 'Heilig Pfeil Tracker',
-    description: 'A mobile-first application for tracking project progress with gamification elements and team collaboration features.',
-    technologies: ['React Native', 'Redux', 'Express', 'PostgreSQL'],
-    liveDemo: '#',
-    github: '#',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop'
-  }
+    company: "AON",
+    location: "Remote (Spokane, WA)",
+    role: "Software Engineer",
+    dates: "June 2022 – December 2023",
+    bullets: [
+      "Designed automated ETL pipelines in Databricks on Snowflake vendor data using Snowpark, enabling scalable data warehousing across multiple downstream analytics processes.",
+      "Built a scalable microservices platform using Python, Spring Boot (Java), and JavaScript, improving development efficiency by 40% and reducing operational costs.",
+      "Implemented DevSecOps strategy integrating automated security testing and Terraform infrastructure-as-code into GitHub CI/CD pipelines via Docker, cutting security incidents by 50%.",
+      "Developed REST API systems in Python with optimized Snowflake SQL queries supporting concurrent analytical report processing.",
+    ],
+  },
+  {
+    company: "NSF Spatiotemporal Innovation Center",
+    location: "Fairfax, VA",
+    role: "Software Engineer",
+    dates: "August 2021 – May 2022",
+    bullets: [
+      "Accelerated 3 research projects by developing JavaScript front-end features, authoring internal documentation, and deploying AWS S3 integration in Python for scalable server data transfer and storage.",
+      "Deployed HPC software via remote PXE-boot across 70+ IBM bare metal machines using custom Bash scripts to standardize OS configurations and optimize High Performance Computing environments.",
+      "Standardized Spack package management for reproducible HPC software environments supporting weather research workloads.",
+    ],
+  },
 ];
 
-const ichigoProjects: Project[] = [
+const petProjects: SkillCategory[] = [
   {
-    title: 'Zangetsu Analytics',
-    description: 'A powerful data analysis platform that cuts through complex datasets like a blade through spiritual pressure.',
-    technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-    liveDemo: '#',
-    github: '#',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop'
+    title: "Elden Ring NPC audio bot",
+    body: "Audio bot of an NPC from Elden Ring, built with Rust.",
   },
   {
-    title: 'Hollow Mask Interface',
-    description: 'A dark-themed administrative dashboard with real-time monitoring capabilities and intuitive user experience.',
-    technologies: ['Vue.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    liveDemo: '#',
-    github: '#',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop'
+    title: "Dance the metros",
+    body: "Dance in every major metro area in the US (still TBD).",
   },
   {
-    title: 'Soul Reaper Mobile',
-    description: 'A mobile application for task management with progressive features and offline capabilities.',
-    technologies: ['React Native', 'Redux', 'Express', 'PostgreSQL'],
-    liveDemo: '#',
-    github: '#',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop'
-  }
+    title: "Peak physique",
+    body: "Get the peak physique.",
+  },
 ];
 
 const Projects: React.FC<ProjectsProps> = ({ currentTheme }) => {
-  const projects = currentTheme === "quincy" ? quincyProjects : ichigoProjects;
+  if (currentTheme === "personal") {
+    return (
+      <div className="pet-projects-grid">
+        {petProjects.map((item, index) => (
+          <div key={index} className={`card card-${currentTheme} skills-category-card`}>
+            <h4 className={`text-${currentTheme} skills-category-title`}>{item.title}</h4>
+            <p className="skills-category-body">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <div className="projects-grid">
-      {projects.map((project, index) => (
-        <div key={index} className={`project-card project-card-${currentTheme}`}>
-          <div className={`bubble project-bubble bubble-${currentTheme}`}>
-            {project.image ? (
-              <img src={project.image} alt={project.title} />
-            ) : (
-              <div className="bubble-icon">🚀</div>
-            )}
-          </div>
-          <div className="project-content">
-            <h4 className={`text-${currentTheme} project-title`}>{project.title}</h4>
-            <p className="project-description">{project.description}</p>
-            <div className="tech-tags">
-              {project.technologies.map((tech, techIndex) => (
-                <span key={techIndex} className={`tech-tag tech-tag-${currentTheme}`}>{tech}</span>
-              ))}
-            </div>
-            <div className="project-buttons">
-              <a href={project.liveDemo} className={`btn btn-${currentTheme}`}>Live Demo</a>
-              <a href={project.github} className={`btn btn-${currentTheme}`}>GitHub</a>
-            </div>
-          </div>
-        </div>
+    <div className="work-experience-stack">
+      <p className={`work-intro text-${currentTheme}`}>{workIntro}</p>
+      {experience.map((job, index) => (
+        <article key={index} className={`experience-card experience-card-${currentTheme}`}>
+          <header className="experience-card-header">
+            <h3 className={`experience-company text-${currentTheme}`}>
+              {job.company} · {job.location}
+            </h3>
+            <p className="experience-role-line">
+              <span className="experience-role">{job.role}</span>
+              <span className="experience-dates">{job.dates}</span>
+            </p>
+          </header>
+          <ul className="experience-bullets">
+            {job.bullets.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+        </article>
       ))}
     </div>
   );

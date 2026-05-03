@@ -1,81 +1,55 @@
 import React from "react";
-import type { Skill } from "../types";
+import type { SkillCategory } from "../types";
 import "../theme/styles.css";
 
 interface SkillsProps {
-  currentTheme: "quincy" | "ichigo";
+  currentTheme: "professional" | "personal";
 }
 
-const quincySkills: Skill[] = [
+const careerSkillCategories: SkillCategory[] = [
   {
-    icon: '⚡',
-    title: 'Frontend Development',
-    description: 'React, Vue.js, HTML5, CSS3, JavaScript - Crafting user interfaces with Quincy precision',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop'
+    title: "Languages",
+    body: "Python (Advanced), SQL (Advanced), Java, JavaScript, Bash",
   },
   {
-    icon: '🏗️',
-    title: 'Backend Architecture',
-    description: 'Node.js, Python, Databases - Building robust systems like the Wandenreich infrastructure',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+    title: "Frameworks & Libraries",
+    body: "Spring Boot, PySpark, Pandas, NumPy, pytest",
   },
   {
-    icon: '🎨',
-    title: 'UI/UX Design',
-    description: 'Figma, Adobe Creative Suite - Designing with the elegance of Quincy aesthetics',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop'
+    title: "Data & Cloud Platforms",
+    body: "Databricks, Apache Spark, Apache Airflow, Snowflake, dbt, AWS (S3, Lambda, DynamoDB, EC2)",
   },
   {
-    icon: '☁️',
-    title: 'Cloud & DevOps',
-    description: 'AWS, Docker, CI/CD - Deploying solutions with strategic precision',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
-  }
+    title: "DevOps & Infrastructure",
+    body: "Docker, Terraform, Git, GitHub, CI/CD, Kubernetes",
+  },
+  {
+    title: "HPC & Systems",
+    body: "Slurm, Spack, PXE Boot, IBM Bare Metal",
+  },
+  {
+    title: "Methodologies",
+    body: "ETL/ELT, REST APIs, DevSecOps, Microservices, Agile/Scrum, Data Warehousing",
+  },
 ];
 
-const ichigoSkills: Skill[] = [
-  {
-    icon: '⚔️',
-    title: 'Frontend Development',
-    description: 'React, Vue.js, HTML5, CSS3, JavaScript - Cutting through complexity with Zangetsu\'s edge',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop'
-  },
-  {
-    icon: '🔥',
-    title: 'Backend Architecture',
-    description: 'Node.js, Python, Databases - Building systems with the power of Getsuga Tensho',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
-  },
-  {
-    icon: '💀',
-    title: 'UI/UX Design',
-    description: 'Figma, Adobe Creative Suite - Designing with the intensity of Hollow mask',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop'
-  },
-  {
-    icon: '⚡',
-    title: 'Cloud & DevOps',
-    description: 'AWS, Docker, CI/CD - Deploying with the speed of Flash Step',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
-  }
+const personalSkillCards: SkillCategory[] = [
+  { title: "Dance", body: "Let's get down on it." },
+  { title: "Sketching", body: "I need to learn to draw." },
+  { title: "Reading", body: "Ask me my latest read." },
+  { title: "Traveling", body: "I need to do better photography." },
+  { title: "Photography", body: "Everything is computer." },
 ];
 
 const Skills: React.FC<SkillsProps> = ({ currentTheme }) => {
-  const skills = currentTheme === "quincy" ? quincySkills : ichigoSkills;
+  const categories = currentTheme === "professional" ? careerSkillCategories : personalSkillCards;
 
   return (
-    <div className="skills-grid">
-      {skills.map((skill, index) => (
-        <div key={index} className={`card card-${currentTheme}`}>
-          <div className={`bubble skill-bubble bubble-${currentTheme}`}>
-            {skill.image ? (
-              <img src={skill.image} alt={skill.title} />
-            ) : (
-              <div className="bubble-icon">{skill.icon}</div>
-            )}
-          </div>
-          <h4 className={`text-${currentTheme}`}>{skill.title}</h4>
-          <p>{skill.description}</p>
+    <div className="skills-category-grid">
+      {categories.map((cat, index) => (
+        <div key={index} className={`card card-${currentTheme} skills-category-card`}>
+          <h4 className={`text-${currentTheme} skills-category-title`}>{cat.title}</h4>
+          <p className="skills-category-body">{cat.body}</p>
         </div>
       ))}
     </div>

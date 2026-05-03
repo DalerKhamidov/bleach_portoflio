@@ -1,6 +1,6 @@
 # Bleach Portfolio
 
-A personal portfolio website built with React, TypeScript, and Vite, featuring a Bleach anime-themed design with dual themes (Quincy and Soul Society).
+A personal portfolio website built with React, TypeScript, and Vite, featuring a Bleach anime-themed design with dual themes.
 
 ## 🌐 Live Demo
 
@@ -65,7 +65,6 @@ npm run deploy
 ### GitHub Pages Setup
 
 1. **Enable GitHub Pages** in your repository settings:
-
    - Go to Settings → Pages
    - Source: Deploy from a branch
    - Branch: `gh-pages` (created automatically)
@@ -120,8 +119,8 @@ bleach_portoflio/
 
 ### Dual Theme System
 
-- **Quincy Theme** - Light theme with Quincy-inspired styling
-- **Soul Society Theme** - Dark theme with Soul Society-inspired styling
+- **Professional Theme** - Light theme with Quincy-inspired styling
+- **Personal Theme** - Dark theme with Soul Society-inspired styling
 - **Theme Toggle** - Switch between themes dynamically
 
 ### Portfolio Sections

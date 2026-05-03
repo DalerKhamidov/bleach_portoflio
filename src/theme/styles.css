@@ -1,11 +1,11 @@
-/* Quincy Theme Variables */
+/* professional Theme Variables */
 :root {
-  --quincy-blue: #4169e1;
-  --quincy-light: #6495ed;
-  --quincy-dark: #0a0a23;
-  --ichigo-red: #dc2626;
-  --ichigo-orange: #ea580c;
-  --ichigo-dark: #1c1917;
+  --professional-blue: #4169e1;
+  --professional-light: #6495ed;
+  --professional-dark: #0a0a23;
+  --personal-red: #dc2626;
+  --personal-orange: #ea580c;
+  --personal-dark: #1c1917;
   /* Tsukushi Old Mincho is commercial; Zen Old Mincho is the closest free web substitute */
   --font-primary: "Zen Old Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
@@ -29,14 +29,14 @@ select {
   font-family: inherit;
 }
 
-/* Quincy Theme */
-.quincy-theme {
+/* professional Theme */
+.professional-theme {
   background: linear-gradient(135deg, #0a0a23 0%, #1a1a4a 100%);
   color: white;
   min-height: 100vh;
 }
 
-.quincy-bg {
+.professional-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,13 +46,13 @@ select {
   z-index: -1;
   opacity: 0.1;
   background-image:
-    radial-gradient(circle at 20% 20%, var(--quincy-blue) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, var(--quincy-light) 0%, transparent 50%),
+    radial-gradient(circle at 20% 20%, var(--professional-blue) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--professional-light) 0%, transparent 50%),
     radial-gradient(circle at 40% 60%, #87ceeb 0%, transparent 50%);
-  animation: quincy-pulse 4s ease-in-out infinite;
+  animation: professional-pulse 4s ease-in-out infinite;
 }
 
-@keyframes quincy-pulse {
+@keyframes professional-pulse {
 
   0%,
   100% {
@@ -64,14 +64,14 @@ select {
   }
 }
 
-/* Ichigo Theme */
-.ichigo-theme {
+/* personal Theme */
+.personal-theme {
   background: linear-gradient(135deg, #1c1917 0%, #44403c 100%);
   color: white;
   min-height: 100vh;
 }
 
-.ichigo-bg {
+.personal-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,13 +81,13 @@ select {
   z-index: -1;
   opacity: 0.1;
   background-image:
-    radial-gradient(circle at 30% 30%, var(--ichigo-red) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, var(--ichigo-orange) 0%, transparent 50%),
+    radial-gradient(circle at 30% 30%, var(--personal-red) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, var(--personal-orange) 0%, transparent 50%),
     radial-gradient(circle at 50% 20%, #dc2626 0%, transparent 50%);
-  animation: ichigo-pulse 3s ease-in-out infinite;
+  animation: personal-pulse 3s ease-in-out infinite;
 }
 
-@keyframes ichigo-pulse {
+@keyframes personal-pulse {
 
   0%,
   100% {
@@ -108,16 +108,16 @@ select {
   padding: 1.125rem 0;
 }
 
-.header-quincy {
+.header-professional {
   background: rgba(10, 10, 35, 0.9);
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--quincy-blue);
+  border-bottom: 2px solid var(--professional-blue);
 }
 
-.header-ichigo {
+.header-personal {
   background: rgba(28, 25, 23, 0.9);
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--ichigo-red);
+  border-bottom: 2px solid var(--personal-red);
 }
 
 .nav-container {
@@ -140,18 +140,18 @@ select {
   text-overflow: ellipsis;
 }
 
-.logo-quincy {
+.logo-professional {
   font-size: clamp(1.25rem, 1.35vw + 1rem, 1.75rem);
   font-weight: bold;
-  color: var(--quincy-blue);
-  text-shadow: 0 0 10px var(--quincy-blue);
+  color: var(--professional-blue);
+  text-shadow: 0 0 10px var(--professional-blue);
 }
 
-.logo-ichigo {
+.logo-personal {
   font-size: clamp(1.25rem, 1.35vw + 1rem, 1.75rem);
   font-weight: bold;
-  color: var(--ichigo-red);
-  text-shadow: 0 0 10px var(--ichigo-red);
+  color: var(--personal-red);
+  text-shadow: 0 0 10px var(--personal-red);
 }
 
 .nav-center {
@@ -195,26 +195,26 @@ select {
 }
 
 .nav-link:hover {
-  border-color: var(--quincy-blue);
-  color: var(--quincy-blue);
+  border-color: var(--professional-blue);
+  color: var(--professional-blue);
   box-shadow: 0 0 15px rgba(65, 105, 225, 0.5);
 }
 
-.nav-link-ichigo:hover {
-  border-color: var(--ichigo-red);
-  color: var(--ichigo-red);
+.nav-link-personal:hover {
+  border-color: var(--personal-red);
+  color: var(--personal-red);
   box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
 }
 
 .nav-link.active {
-  border-color: var(--quincy-blue);
-  color: var(--quincy-blue);
+  border-color: var(--professional-blue);
+  color: var(--professional-blue);
   box-shadow: 0 0 15px rgba(65, 105, 225, 0.5);
 }
 
-.nav-link-ichigo.active {
-  border-color: var(--ichigo-red);
-  color: var(--ichigo-red);
+.nav-link-personal.active {
+  border-color: var(--personal-red);
+  color: var(--personal-red);
   box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
 }
 
@@ -232,19 +232,19 @@ select {
   box-sizing: border-box;
 }
 
-.theme-switch-quincy {
-  background: linear-gradient(135deg, var(--quincy-blue), var(--quincy-light));
+.theme-switch-professional {
+  background: linear-gradient(135deg, var(--professional-blue), var(--professional-light));
 }
 
-.theme-switch-quincy:hover {
+.theme-switch-professional:hover {
   box-shadow: 0 0 20px rgba(65, 105, 225, 0.5);
 }
 
-.theme-switch-ichigo {
-  background: linear-gradient(135deg, var(--ichigo-red), var(--ichigo-orange));
+.theme-switch-personal {
+  background: linear-gradient(135deg, var(--personal-red), var(--personal-orange));
 }
 
-.theme-switch-ichigo:hover {
+.theme-switch-personal:hover {
   box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
 }
 
@@ -275,12 +275,12 @@ select {
   position: relative;
 }
 
-.section-title-quincy {
-  color: var(--quincy-blue);
+.section-title-professional {
+  color: var(--professional-blue);
   text-shadow: 0 0 20px rgba(65, 105, 225, 0.5);
 }
 
-.section-title-quincy::after {
+.section-title-professional::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -288,16 +288,16 @@ select {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--quincy-blue), transparent);
-  box-shadow: 0 0 10px var(--quincy-blue);
+  background: linear-gradient(90deg, transparent, var(--professional-blue), transparent);
+  box-shadow: 0 0 10px var(--professional-blue);
 }
 
-.section-title-ichigo {
-  color: var(--ichigo-red);
+.section-title-personal {
+  color: var(--personal-red);
   text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
 }
 
-.section-title-ichigo::after {
+.section-title-personal::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -305,8 +305,8 @@ select {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--ichigo-red), transparent);
-  box-shadow: 0 0 10px var(--ichigo-red);
+  background: linear-gradient(90deg, transparent, var(--personal-red), transparent);
+  box-shadow: 0 0 10px var(--personal-red);
 }
 
 /* Bubble Styles */
@@ -321,21 +321,21 @@ select {
   transition: all 0.3s ease;
 }
 
-.bubble-quincy {
-  background: linear-gradient(135deg, var(--quincy-blue), var(--quincy-light));
-  border-color: var(--quincy-blue);
+.bubble-professional {
+  background: linear-gradient(135deg, var(--professional-blue), var(--professional-light));
+  border-color: var(--professional-blue);
   box-shadow: 0 0 30px rgba(65, 105, 225, 0.6);
-  animation: quincy-glow 2s ease-in-out infinite alternate;
+  animation: professional-glow 2s ease-in-out infinite alternate;
 }
 
-.bubble-ichigo {
-  background: linear-gradient(135deg, var(--ichigo-red), var(--ichigo-orange));
-  border-color: var(--ichigo-red);
+.bubble-personal {
+  background: linear-gradient(135deg, var(--personal-red), var(--personal-orange));
+  border-color: var(--personal-red);
   box-shadow: 0 0 30px rgba(220, 38, 38, 0.6);
-  animation: ichigo-glow 2s ease-in-out infinite alternate;
+  animation: personal-glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes quincy-glow {
+@keyframes professional-glow {
   0% {
     box-shadow: 0 0 30px rgba(65, 105, 225, 0.6);
   }
@@ -345,7 +345,7 @@ select {
   }
 }
 
-@keyframes ichigo-glow {
+@keyframes personal-glow {
   0% {
     box-shadow: 0 0 30px rgba(220, 38, 38, 0.6);
   }
@@ -394,9 +394,11 @@ select {
   border-radius: inherit;
 }
 
-.bubble-icon {
-  font-size: 4rem;
-  color: white;
+.bubble-icon img {
+  width: 90%;        /* adjust to fit your bubble size */
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%; /* optional: makes the gif itself circular */
 }
 
 .profile-bubble .bubble-icon {
@@ -434,6 +436,165 @@ select {
   gap: 2rem;
 }
 
+/* Skills — stacked categories */
+.skills-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-category-card {
+  text-align: left;
+}
+
+.skills-category-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+}
+
+.skills-category-body {
+  color: #e0e0e0;
+  line-height: 1.65;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Work experience (resume-style) */
+.work-experience-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.work-intro {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  margin: 0 auto 1.5rem auto;
+  max-width: 52rem;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.experience-card {
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  text-align: left;
+}
+
+.experience-card-professional {
+  border: 2px solid var(--professional-blue);
+  background: rgba(65, 105, 225, 0.08);
+}
+
+.experience-card-personal {
+  border: 2px solid var(--personal-red);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.experience-card-header {
+  margin-bottom: 1rem;
+}
+
+.experience-company {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.35;
+}
+
+.experience-role-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  align-items: baseline;
+  color: #c8c8c8;
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.experience-role {
+  font-weight: 600;
+}
+
+.experience-dates {
+  color: #a8a8a8;
+}
+
+.experience-bullets {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #e0e0e0;
+  line-height: 1.65;
+}
+
+.experience-bullets li {
+  margin-bottom: 0.65rem;
+}
+
+.experience-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+/* Being human */
+.human-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.human-card {
+  text-align: left;
+}
+
+.human-card p {
+  text-align: left;
+}
+
+/* Misc */
+.misc-panel {
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.misc-panel-personal {
+  border: 2px solid var(--personal-red);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.misc-fun-fact {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #f0f0f0;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+}
+
+.misc-capybara-figure {
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.misc-capybara-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  max-height: 340px;
+  align-self: center;
+}
+
+.pet-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
 /* Card Styles */
 .card {
   border-radius: 20px;
@@ -448,21 +609,21 @@ select {
   transform: translateY(-10px);
 }
 
-.card-quincy {
+.card-professional {
   background: rgba(65, 105, 225, 0.1);
-  border: 2px solid var(--quincy-blue);
+  border: 2px solid var(--professional-blue);
 }
 
-.card-quincy:hover {
+.card-professional:hover {
   box-shadow: 0 15px 40px rgba(65, 105, 225, 0.3);
 }
 
-.card-ichigo {
+.card-personal {
   background: rgba(220, 38, 38, 0.1);
-  border: 2px solid var(--ichigo-red);
+  border: 2px solid var(--personal-red);
 }
 
-.card-ichigo:hover {
+.card-personal:hover {
   box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
 }
 
@@ -476,13 +637,13 @@ select {
   flex-direction: column;
 }
 
-.project-card-quincy {
-  border-color: var(--quincy-blue);
+.project-card-professional {
+  border-color: var(--professional-blue);
 }
 
-.project-card-ichigo {
+.project-card-personal {
   background: rgba(44, 39, 56, 0.8);
-  border-color: var(--ichigo-red);
+  border-color: var(--personal-red);
 }
 
 /* Project Content Layout */
@@ -536,12 +697,12 @@ select {
   margin-bottom: 1rem;
 }
 
-.text-quincy {
-  color: var(--quincy-light);
+.text-professional {
+  color: var(--professional-light);
 }
 
-.text-ichigo {
-  color: var(--ichigo-orange);
+.text-personal {
+  color: var(--personal-orange);
 }
 
 .text-content p {
@@ -576,16 +737,16 @@ select {
   border: 1px solid;
 }
 
-.tech-tag-quincy {
+.tech-tag-professional {
   background: rgba(65, 105, 225, 0.2);
-  color: var(--quincy-light);
-  border-color: var(--quincy-blue);
+  color: var(--professional-light);
+  border-color: var(--professional-blue);
 }
 
-.tech-tag-ichigo {
+.tech-tag-personal {
   background: rgba(220, 38, 38, 0.2);
-  color: var(--ichigo-orange);
-  border-color: var(--ichigo-red);
+  color: var(--personal-orange);
+  border-color: var(--personal-red);
 }
 
 /* Buttons */
@@ -606,19 +767,19 @@ select {
   transform: translateY(-2px);
 }
 
-.btn-quincy {
-  background: linear-gradient(135deg, var(--quincy-blue), var(--quincy-light));
+.btn-professional {
+  background: linear-gradient(135deg, var(--professional-blue), var(--professional-light));
 }
 
-.btn-quincy:hover {
+.btn-professional:hover {
   box-shadow: 0 5px 15px rgba(65, 105, 225, 0.4);
 }
 
-.btn-ichigo {
-  background: linear-gradient(135deg, var(--ichigo-red), var(--ichigo-orange));
+.btn-personal {
+  background: linear-gradient(135deg, var(--personal-red), var(--personal-orange));
 }
 
-.btn-ichigo:hover {
+.btn-personal:hover {
   box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
 }
 
@@ -652,23 +813,23 @@ select {
   outline: none;
 }
 
-.form-input-quincy {
+.form-input-professional {
   background: rgba(65, 105, 225, 0.1);
-  border-color: var(--quincy-blue);
+  border-color: var(--professional-blue);
 }
 
-.form-input-quincy:focus {
-  border-color: var(--quincy-light);
+.form-input-professional:focus {
+  border-color: var(--professional-light);
   box-shadow: 0 0 20px rgba(65, 105, 225, 0.5);
 }
 
-.form-input-ichigo {
+.form-input-personal {
   background: rgba(220, 38, 38, 0.1);
-  border-color: var(--ichigo-red);
+  border-color: var(--personal-red);
 }
 
-.form-input-ichigo:focus {
-  border-color: var(--ichigo-orange);
+.form-input-personal:focus {
+  border-color: var(--personal-orange);
   box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
 }
 
@@ -691,20 +852,20 @@ select {
   text-shadow: 0 0 15px currentColor;
 }
 
-.social-link-quincy {
-  color: var(--quincy-blue);
+.social-link-professional {
+  color: var(--professional-blue);
 }
 
-.social-link-quincy:hover {
-  color: var(--quincy-light);
+.social-link-professional:hover {
+  color: var(--professional-light);
 }
 
-.social-link-ichigo {
-  color: var(--ichigo-red);
+.social-link-personal {
+  color: var(--personal-red);
 }
 
-.social-link-ichigo:hover {
-  color: var(--ichigo-orange);
+.social-link-personal:hover {
+  color: var(--personal-orange);
 }
 
 /* Contact Section */

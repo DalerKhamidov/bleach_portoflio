@@ -2,21 +2,21 @@ import React from "react";
 import "../theme/styles.css";
 
 interface ContactProps {
-  currentTheme: "quincy" | "ichigo";
+  currentTheme: "professional" | "personal";
 }
 
 const Contact: React.FC<ContactProps> = ({ currentTheme }) => {
-  const quincyContent = {
+  const professionalContent = {
     intro: "Ready to discuss your next project? Let's connect and create something extraordinary together.",
     submitText: "Send Message"
   };
 
-  const ichigoContent = {
+  const personalContent = {
     intro: "Ready to face any challenge together? Let's connect and forge something powerful.",
     submitText: "Send Message"
   };
 
-  const content = currentTheme === "quincy" ? quincyContent : ichigoContent;
+  const content = currentTheme === "professional" ? professionalContent : personalContent;
 
   return (
     <div className="contact-content">

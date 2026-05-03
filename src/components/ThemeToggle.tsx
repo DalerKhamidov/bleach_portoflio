@@ -2,13 +2,13 @@ import React from "react";
 import "../theme/styles.css";
 
 interface ThemeToggleProps {
-  currentTheme: "quincy" | "ichigo";
-  setCurrentTheme: React.Dispatch<React.SetStateAction<"quincy" | "ichigo">>;
+  currentTheme: "professional" | "personal";
+  setCurrentTheme: React.Dispatch<React.SetStateAction<"professional" | "personal">>;
 }
 
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ currentTheme, setCurrentTheme }) => {
   const handleThemeSwitch = () => {
-    setCurrentTheme(currentTheme === "quincy" ? "ichigo" : "quincy");
+    setCurrentTheme(currentTheme === "professional" ? "personal" : "professional");
   };
 
   return (
@@ -16,7 +16,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ currentTheme, setCurrentTheme
       onClick={handleThemeSwitch}
       className={`theme-switch theme-switch-${currentTheme}`}
     >
-      {currentTheme === "quincy" ? "Casual" : "Career"}
+      {currentTheme === "professional" ? "Professional" : "Personal"}
     </button>
   );
 };
